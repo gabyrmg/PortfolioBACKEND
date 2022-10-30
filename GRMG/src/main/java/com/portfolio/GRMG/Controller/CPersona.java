@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("persona")
+@RequestMapping("/persona")
 @CrossOrigin(origins = {"http://localhost:4200"/*,"https:grmgfrontend.web.app"*/})
 public class CPersona {
     @Autowired
@@ -42,7 +42,7 @@ public class CPersona {
     
     
 
-  /* @PostMapping("/create")
+   @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoPersona dtoperso) {
         if ((StringUtils.isBlank(dtoperso.getNombre())) || (StringUtils.isBlank(dtoperso.getApellido())) ) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar un nombre y un apellido"), HttpStatus.BAD_REQUEST);
@@ -54,7 +54,7 @@ public class CPersona {
         Persona persona = new Persona(dtoperso.getNombre(),dtoperso.getApellido(),dtoperso.getTitulo(), dtoperso.getDescripcion(),dtoperso.getImg());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
-    }*/
+    }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoPersona dtoperso) {
@@ -120,7 +120,7 @@ public class CPersona {
 
     }
     
-   /* @DeleteMapping("/delete/{id}")
+   @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         //se valida si existe id
         if (!sPersona.existsById(id)) {
@@ -130,7 +130,7 @@ public class CPersona {
         sPersona.delete(id);
         return new ResponseEntity(new Mensaje("Persona eliminada"), HttpStatus.OK);
 
-    }*/
+    }
     
     
 }
