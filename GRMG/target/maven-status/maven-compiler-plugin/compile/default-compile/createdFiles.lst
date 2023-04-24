@@ -21,6 +21,7 @@ com\portfolio\GRMG\Security\Dto\JwtDto.class
 com\portfolio\GRMG\Service\SHyS.class
 com\portfolio\GRMG\Security\Service\UsuarioService.class
 com\portfolio\GRMG\Security\jwt\JwtProvider.class
+com\portfolio\GRMG\WebConfig.class
 com\portfolio\GRMG\Dto\DtoProyectos.class
 com\portfolio\GRMG\Repository\REducacion.class
 com\portfolio\GRMG\Security\jwt\JwtTokenFilter.class
