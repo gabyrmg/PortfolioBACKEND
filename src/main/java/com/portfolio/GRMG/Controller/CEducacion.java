@@ -55,7 +55,7 @@ public class CEducacion {
             return new ResponseEntity(new Mensaje("Instancia de educación existente"), HttpStatus.BAD_REQUEST);
         }
 
-        Educacion educacion = new Educacion(dtoedu.getNombreEd(), dtoedu.getDescripcionEd());
+        Educacion educacion = new Educacion(dtoedu.getImgEd(), dtoedu.getNombreEd(), dtoedu.getDescripcionEd());
         sEducacion.save(educacion);
         return new ResponseEntity(new Mensaje("Instancia de educación agregada"), HttpStatus.OK);
     }
@@ -76,6 +76,7 @@ public class CEducacion {
         }
 
         Educacion educacion = sEducacion.getOne(id).get();
+        educacion.setImgEd(dtoedu.getImgEd());
         educacion.setNombreEd(dtoedu.getNombreEd());
         educacion.setDescripcionEd((dtoedu.getDescripcionEd()));
 
